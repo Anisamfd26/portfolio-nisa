@@ -1,4 +1,4 @@
-# Portfolio Nisa - Digital Ecosystem & Business Insights
+# Portfolio Anisa Mufida
 
 Welcome to my personal portfolio repository. This project is a digital ecosystem built to showcase my journey as a **Computer Science student** with a strong passion for **Data Analysis** and **Product Management**.
 

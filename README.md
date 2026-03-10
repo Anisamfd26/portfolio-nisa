@@ -32,15 +32,15 @@ Beyond coding, this project reflects my experience in:
     ```
 2.  **Install dependencies (Recommended using Bun):**
     ```bash
-    bun install
+    npm install
     ```
 3.  **Run the development server:**
     ```bash
-    bun dev
+    npm run dev
     ```
 4.  **Build for production:**
     ```bash
-    bun run build
+    npm run build
     ```
 
 ## 📫 Connect with Me

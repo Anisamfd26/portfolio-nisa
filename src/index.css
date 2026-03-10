@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97.6%;
+    --foreground: 210 6% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 6% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 6% 20%;
+
+    --primary: 160 100% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 100% 50%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 210 10% 92%;
+    --muted-foreground: 210 6% 45%;
+
+    --accent: 160 100% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 10% 80%;
+    --input: 210 10% 80%;
+    --ring: 160 100% 33%;
+
+    --radius: 0.25rem;
+
+    --structure: 210 6% 35%;
+    --structure-light: 210 8% 88%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 6% 20%;
+    --sidebar-primary: 160 100% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 10% 95%;
+    --sidebar-accent-foreground: 210 6% 20%;
+    --sidebar-border: 210 10% 88%;
+    --sidebar-ring: 160 100% 33%;
+  }
+
+  .dark {
+    --background: 200 8% 8%;
+    --foreground: 210 10% 90%;
+
+    --card: 200 8% 11%;
+    --card-foreground: 210 10% 90%;
+
+    --popover: 200 8% 11%;
+    --popover-foreground: 210 10% 90%;
+
+    --primary: 160 100% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 100% 50%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 200 8% 18%;
+    --muted-foreground: 210 8% 55%;
+
+    --accent: 160 100% 33%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 8% 20%;
+    --input: 200 8% 20%;
+    --ring: 160 100% 33%;
+
+    --structure: 210 6% 55%;
+    --structure-light: 200 8% 16%;
+
+    --sidebar-background: 200 8% 6%;
+    --sidebar-foreground: 210 10% 90%;
+    --sidebar-primary: 160 100% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 8% 14%;
+    --sidebar-accent-foreground: 210 10% 90%;
+    --sidebar-border: 200 8% 18%;
+    --sidebar-ring: 160 100% 33%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading uppercase tracking-wider;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply font-heading text-xs uppercase tracking-[0.2em] text-muted-foreground 
+           transition-colors duration-200 hover:text-primary cursor-pointer;
+  }
+
+  .nav-link-active {
+    @apply text-primary;
+  }
+
+  .section-title {
+    @apply font-heading text-xs uppercase tracking-[0.25em] text-structure 
+           border-b border-structure-light pb-2 mb-6;
+  }
+
+  .card-structure {
+    @apply border border-border bg-card p-5 transition-colors duration-200 
+           hover:border-primary/30;
+  }
+
+  .tag-amber {
+    @apply inline-block font-heading text-[10px] uppercase tracking-wider 
+           bg-secondary/15 text-secondary px-2 py-0.5 border border-secondary/30;
+  }
+
+  .tag-teal {
+    @apply inline-block font-heading text-[10px] uppercase tracking-wider 
+           bg-primary/10 text-primary px-2 py-0.5 border border-primary/30;
+  }
+
+  .dataflow-line {
+    stroke: hsl(var(--primary));
+    stroke-width: 1.5;
+    fill: none;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+
+  .dataflow-line.animate {
+    animation: draw-line 1.5s ease-out forwards;
+  }
+
+  .dataflow-pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes terminal-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: terminal-blink 1s step-end infinite;
+}
